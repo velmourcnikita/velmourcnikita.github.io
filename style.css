@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Google Sans', 'Product Sans', sans-serif;
+}
+
+body {
+    background-color: #09090b;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+#snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2;
+}
+
+/* Карточки */
+.card {
+    background: rgba(18, 18, 20, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.profile-card {
+    padding: 24px 0 20px 0;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    gap: 16px;
+}
+
+.avatar-container {
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    object-fit: cover;
+    background: #18181b;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid #121214;
+}
+
+.status-dot.online { background-color: #23a55a; }
+.status-dot.idle { background-color: #f0b232; }
+.status-dot.dnd { background-color: #f23f43; }
+.status-dot.offline { background-color: #80848e; }
+
+.username {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.bio-content {
+    padding: 18px 22px 10px 22px;
+    font-size: 13.5px;
+    color: #d1d1d1;
+    line-height: 1.6;
+}
+
+.meta-info {
+    padding: 0 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12.5px;
+    color: #88888e;
+    margin-bottom: 16px;
+}
+
+.socials {
+    padding: 0 22px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff6b00;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.social-btn:hover {
+    background: rgba(255, 107, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.fatality-f {
+    font-weight: 900;
+}
+
+/* SoundCloud Card */
+.sc-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 13.5px;
+    transition: 0.2s ease;
+}
+
+.sc-card:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+}
+
+.sc-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sc-icon {
+    color: #ff5500;
+    font-size: 18px;
+}
+
+.sc-arrow {
+    color: #ff6b00;
+    font-size: 12px;
+}
+
+/* Discord Card */
+.discord-card {
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dc-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dc-avatar-wrap {
+    position: relative;
+    width: 44px;
+    height: 44px;
+}
+
+.dc-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.dc-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dc-username {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.dc-activity {
+    font-size: 11.5px;
+    color: #a1a1aa;
+}
+
+.dc-badge {
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}

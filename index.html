@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bio</title>
+    <!-- Шрифт Google Sans -->
+    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+    <!-- Иконки FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Снег на фоне -->
+    <canvas id="snowfall"></canvas>
+
+    <div class="container">
+        <!-- Главная карточка -->
+        <div class="card profile-card">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" id="discord-avatar" class="avatar">
+                    <div class="status-dot offline" id="status-dot"></div>
+                </div>
+                <div class="user-info">
+                    <h1 class="username">velmourche</h1>
+                </div>
+            </div>
+
+            <div class="bio-content">
+                <p>обожаю пастить, <b>fame of yougame.biz</b></p>
+                <p>лет — 17</p>
+                <p>живу — в пизде</p>
+                <p>ПК — тумбочка</p>
+            </div>
+
+            <div class="meta-info">
+                <div class="meta-item"><i class="fa-solid fa-location-dot"></i> село петушиное</div>
+                <div class="meta-item"><i class="fa-regular fa-calendar-days"></i> Joined 11 months ago</div>
+            </div>
+
+            <!-- Соцсети -->
+            <div class="socials">
+                <a href="https://fatality.win/members/kallcode.78032/" target="_blank" class="social-btn fatality" title="Fatality.win">
+                    <span class="fatality-f">F</span>
+                </a>
+                <a href="https://t.me/ida64gang" target="_blank" class="social-btn telegram" title="Telegram Channel">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- SoundCloud -->
+        <a href="https://on.soundcloud.com/7iRGmqFn0TAQfqLgtp" target="_blank" class="card sc-card">
+            <div class="sc-left">
+                <i class="fa-brands fa-soundcloud sc-icon"></i>
+                <span>my sc</span>
+            </div>
+            <i class="fa-solid fa-arrow-right sc-arrow"></i>
+        </a>
+
+        <!-- Discord Live Card -->
+        <div class="card discord-card">
+            <div class="dc-profile">
+                <div class="dc-avatar-wrap">
+                    <img id="dc-card-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Discord Avatar">
+                    <div id="dc-card-status" class="status-dot offline"></div>
+                </div>
+                <div class="dc-details">
+                    <div id="dc-card-username" class="dc-username">.bykzo</div>
+                    <div id="dc-card-activity" class="dc-activity">Загрузка...</div>
+                </div>
+            </div>
+            <div class="dc-badge">
+                <i class="fa-solid fa-heart"></i> ANON
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
