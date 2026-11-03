@@ -88,15 +88,17 @@
         for (const id of ['discord-avatar', 'dc-card-avatar']) if (document.getElementById(id).src !== avatar) document.getElementById(id).src = avatar;
       }
       const activities = Array.isArray(data.activities) ? data.activities : [];
-      const custom = activities.find(item => item.type === 4 && item.state), game = activities.find(item => item.type === 0 && item.name);
-      const activity = data.discord_status === 'offline' ? '' : custom ? custom.state : game ? 'Играет в ' + game.name : '';
+      const custom = activities.find(item => item && item.type === 4 && item.state);
+      const activity = data.discord_status === 'offline' ? '' : custom ? custom.state : '';
       showPresence(data.discord_status, activity);
+      window.DiscordActivity.render(data);
     } catch {
       showPresence('unknown', navigator.onLine ? 'Статус сейчас недоступен' : 'Нет подключения к сети');
+      window.DiscordActivity.render(null);
     } finally {
       clearTimeout(timeout);
       if (discordRequest === controller) discordRequest = null;
-      if (!document.hidden) discordTimer = setTimeout(updateDiscord, 20000);
+      if (!document.hidden) discordTimer = setTimeout(updateDiscord, 15000);
     }
   }
   document.addEventListener('visibilitychange', () => {

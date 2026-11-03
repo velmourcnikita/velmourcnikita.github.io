@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.cdnfonts.com">
   <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="discord-activity.js" defer></script>
   <script src="script.js" defer></script>
   <script src="cursor.js" defer></script>
 </head>
@@ -72,6 +73,7 @@
     </section>
 
     <section class="card discord-card" aria-label="Статус Discord">
+      <div class="dc-summary">
       <div class="dc-avatar-wrap">
         <img id="dc-card-avatar" src="assets/avatar.svg" width="44" height="44" alt="">
         <span id="dc-card-status" class="status-dot unknown" aria-hidden="true"></span>
@@ -81,6 +83,8 @@
         <p id="dc-card-activity" role="status">Получаю статус…</p>
       </div>
       <span class="presence-label" id="presence-label">…</span>
+      </div>
+      <div id="dc-activities" class="dc-activities" hidden aria-label="Текущая активность в Discord"></div>
     </section>
 
     <section class="card music-card" aria-label="Фоновая музыка">
