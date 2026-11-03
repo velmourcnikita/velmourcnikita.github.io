@@ -19,7 +19,7 @@
   <script src="cursor.js" defer></script>
 </head>
 <body>
-  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
@@ -35,7 +35,7 @@
     <header class="page-header">
       <span class="page-label">personal page <span>/</span> velmourche</span>
       <button class="effects-button" id="effects-toggle" type="button" aria-pressed="true" data-no-music>
-        <svg class="icon"><use href="#i-spark"/></svg><span>Эффекты</span>
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon"><use href="#i-spark"/></svg><span>Эффекты</span>
       </button>
     </header>
 
@@ -60,13 +60,13 @@
       </dl>
       <nav class="socials" aria-label="Мои страницы">
         <a href="https://t.me/ida64gang" target="_blank" rel="noopener noreferrer" class="social-link">
-          <svg class="icon"><use href="#i-telegram"/></svg>Telegram<svg class="icon arrow"><use href="#i-arrow"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon"><use href="#i-telegram"/></svg>Telegram<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon arrow"><use href="#i-arrow"/></svg>
         </a>
         <a href="https://github.com/velmourcnikita" target="_blank" rel="noopener noreferrer" class="social-link">
-          <svg class="icon"><use href="#i-code"/></svg>GitHub<svg class="icon arrow"><use href="#i-arrow"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon"><use href="#i-code"/></svg>GitHub<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon arrow"><use href="#i-arrow"/></svg>
         </a>
         <a href="https://fatality.win/members/kallcode.78032/" target="_blank" rel="noopener noreferrer" class="social-link fatality">
-          <span class="fatality-f" aria-hidden="true">F</span>Fatality<svg class="icon arrow"><use href="#i-arrow"/></svg>
+          <span class="fatality-f" aria-hidden="true">F</span>Fatality<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon arrow"><use href="#i-arrow"/></svg>
         </a>
       </nav>
     </section>
@@ -86,10 +86,10 @@
     <section class="card music-card" aria-label="Фоновая музыка">
       <div class="music-row">
         <button id="music-toggle" class="music-toggle" type="button" aria-label="Включить музыку" aria-pressed="false" data-no-music>
-          <svg class="icon"><use id="music-icon" href="#i-play"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon"><use id="music-icon" href="#i-play"/></svg>
         </button>
         <div class="track-info">
-          <a href="https://soundcloud.com/lemongirls/newday" target="_blank" rel="noopener noreferrer" data-no-music>новый день speedup <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a href="https://soundcloud.com/lemongirls/newday" target="_blank" rel="noopener noreferrer" data-no-music>новый день speedup <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon"><use href="#i-arrow"/></svg></a>
           <p id="music-status" role="status">Тихий фон после первого нажатия</p>
         </div>
         <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
@@ -97,7 +97,7 @@
       <div class="music-bottom">
         <span class="music-credit">SoundCloud</span>
         <label class="volume-control" data-no-music>
-          <svg class="icon" aria-hidden="true"><use href="#i-volume"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon" aria-hidden="true"><use href="#i-volume"/></svg>
           <span class="sr-only">Громкость музыки</span>
           <input id="music-volume" type="range" min="0" max="100" value="15" aria-label="Громкость музыки">
           <output id="volume-label" for="music-volume">15%</output>
@@ -112,14 +112,14 @@
     </section>
 
     <a href="https://on.soundcloud.com/7iRGmqFn0TAQfqLgtp" target="_blank" rel="noopener noreferrer" class="card link-card">
-      <span class="link-icon"><svg class="icon"><use href="#i-cloud"/></svg></span>
+      <span class="link-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon"><use href="#i-cloud"/></svg></span>
       <span><span class="link-title">Мой SoundCloud</span><span class="link-caption">Что слушаю и сохраняю</span></span>
-      <svg class="icon arrow"><use href="#i-arrow"/></svg>
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon arrow"><use href="#i-arrow"/></svg>
     </a>
     <a href="https://velmourcnikita.github.io/OmniView/" class="card link-card">
-      <span class="link-icon project-icon"><svg class="icon"><use href="#i-monitor"/></svg></span>
+      <span class="link-icon project-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon"><use href="#i-monitor"/></svg></span>
       <span><span class="link-title">OmniView</span><span class="link-caption">Мой проект для компьютерного класса</span></span>
-      <svg class="icon arrow"><use href="#i-arrow"/></svg>
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" class="icon arrow"><use href="#i-arrow"/></svg>
     </a>
     <footer class="page-footer"><span>velmourche</span><a href="https://github.com/velmourcnikita/velmourcnikita.github.io" target="_blank" rel="noopener noreferrer">исходный код ↗</a></footer>
   </main>
