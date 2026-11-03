@@ -1,83 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bio</title>
-    <!-- Шрифт Google Sans -->
-    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
-    <!-- Иконки FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="velmourche — немного обо мне, мои ссылки и проекты.">
+  <meta property="og:title" content="velmourche / bio">
+  <meta property="og:description" content="Немного обо мне, мои ссылки и проекты.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://velmourcnikita.github.io/">
+  <title>velmourche / bio</title>
+  <link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.cdnfonts.com">
+  <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="cursor.js" defer></script>
 </head>
 <body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="m21 4-4 16-6-5-4 3 1-6 9-5-11 7-4-3Z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M8 17H6a4 4 0 0 1-.6-8A6.5 6.5 0 0 1 18 8h.5a4.5 4.5 0 0 1 0 9H16M11 11v8m3-10v10"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="3"/><path d="M8 21h8m-4-4v4"/></symbol>
+  </svg>
+  <canvas id="snowfall" aria-hidden="true"></canvas>
+  <main class="container">
+    <header class="page-header">
+      <span class="page-label">personal page <span>/</span> velmourche</span>
+      <button class="effects-button" id="effects-toggle" type="button" aria-pressed="true" data-no-music>
+        <svg class="icon"><use href="#i-spark"/></svg><span>Эффекты</span>
+      </button>
+    </header>
 
-    <!-- Снег на фоне -->
-    <canvas id="snowfall"></canvas>
-
-    <div class="container">
-        <!-- Главная карточка -->
-        <div class="card profile-card">
-            <div class="profile-header">
-                <div class="avatar-container">
-                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" id="discord-avatar" class="avatar">
-                    <div class="status-dot offline" id="status-dot"></div>
-                </div>
-                <div class="user-info">
-                    <h1 class="username">velmourche</h1>
-                </div>
-            </div>
-
-            <div class="bio-content">
-                <p>обожаю пастить, <b>fame of yougame.biz</b></p>
-                <p>лет — 17</p>
-                <p>живу — в пизде</p>
-                <p>ПК — тумбочка</p>
-            </div>
-
-            <div class="meta-info">
-                <div class="meta-item"><i class="fa-solid fa-location-dot"></i> село петушиное</div>
-                <div class="meta-item"><i class="fa-regular fa-calendar-days"></i> Joined 11 months ago</div>
-            </div>
-
-            <!-- Соцсети -->
-            <div class="socials">
-                <a href="https://fatality.win/members/kallcode.78032/" target="_blank" class="social-btn fatality" title="Fatality.win">
-                    <span class="fatality-f">F</span>
-                </a>
-                <a href="https://t.me/ida64gang" target="_blank" class="social-btn telegram" title="Telegram Channel">
-                    <i class="fa-brands fa-telegram"></i>
-                </a>
-            </div>
+    <section class="card profile-card" aria-labelledby="profile-title">
+      <div class="profile-header">
+        <div class="avatar-container">
+          <img src="assets/avatar.svg" width="80" height="80" alt="" id="discord-avatar" class="avatar">
+          <span class="status-dot unknown" id="status-dot" aria-hidden="true"></span>
         </div>
-
-        <!-- SoundCloud -->
-        <a href="https://on.soundcloud.com/7iRGmqFn0TAQfqLgtp" target="_blank" class="card sc-card">
-            <div class="sc-left">
-                <i class="fa-brands fa-soundcloud sc-icon"></i>
-                <span>my sc</span>
-            </div>
-            <i class="fa-solid fa-arrow-right sc-arrow"></i>
+        <div class="user-info">
+          <p class="eyebrow">bio</p>
+          <h1 id="profile-title">velmourche<span class="accent">.</span></h1>
+          <p class="handle">@velmourcnikita</p>
+        </div>
+      </div>
+      <p class="bio-line">обожаю пастить, <strong>fame of yougame.biz</strong></p>
+      <dl class="facts">
+        <div><dt>возраст</dt><dd>17 лет</dd></div>
+        <div><dt>локация</dt><dd>село петушиное</dd></div>
+        <div><dt>живу</dt><dd>в пизде</dd></div>
+        <div><dt>мой ПК</dt><dd>тумбочка</dd></div>
+      </dl>
+      <nav class="socials" aria-label="Мои страницы">
+        <a href="https://t.me/ida64gang" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="icon"><use href="#i-telegram"/></svg>Telegram<svg class="icon arrow"><use href="#i-arrow"/></svg>
         </a>
+        <a href="https://github.com/velmourcnikita" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="icon"><use href="#i-code"/></svg>GitHub<svg class="icon arrow"><use href="#i-arrow"/></svg>
+        </a>
+        <a href="https://fatality.win/members/kallcode.78032/" target="_blank" rel="noopener noreferrer" class="social-link fatality">
+          <span class="fatality-f" aria-hidden="true">F</span>Fatality<svg class="icon arrow"><use href="#i-arrow"/></svg>
+        </a>
+      </nav>
+    </section>
 
-        <!-- Discord Live Card -->
-        <div class="card discord-card">
-            <div class="dc-profile">
-                <div class="dc-avatar-wrap">
-                    <img id="dc-card-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Discord Avatar">
-                    <div id="dc-card-status" class="status-dot offline"></div>
-                </div>
-                <div class="dc-details">
-                    <div id="dc-card-username" class="dc-username">.bykzo</div>
-                    <div id="dc-card-activity" class="dc-activity">Загрузка...</div>
-                </div>
-            </div>
-            <div class="dc-badge">
-                <i class="fa-solid fa-heart"></i> ANON
-            </div>
+    <section class="card discord-card" aria-label="Статус Discord">
+      <div class="dc-avatar-wrap">
+        <img id="dc-card-avatar" src="assets/avatar.svg" width="44" height="44" alt="">
+        <span id="dc-card-status" class="status-dot unknown" aria-hidden="true"></span>
+      </div>
+      <div class="dc-details">
+        <div class="dc-heading"><span id="dc-card-username">.bykzo</span><span class="platform-label">Discord</span></div>
+        <p id="dc-card-activity" role="status">Получаю статус…</p>
+      </div>
+      <span class="presence-label" id="presence-label">…</span>
+    </section>
+
+    <section class="card music-card" aria-label="Фоновая музыка">
+      <div class="music-row">
+        <button id="music-toggle" class="music-toggle" type="button" aria-label="Включить музыку" aria-pressed="false" data-no-music>
+          <svg class="icon"><use id="music-icon" href="#i-play"/></svg>
+        </button>
+        <div class="track-info">
+          <a href="https://soundcloud.com/lemongirls/newday" target="_blank" rel="noopener noreferrer" data-no-music>новый день speedup <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <p id="music-status" role="status">Тихий фон после первого нажатия</p>
         </div>
-    </div>
+        <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="music-bottom">
+        <span class="music-credit">SoundCloud</span>
+        <label class="volume-control" data-no-music>
+          <svg class="icon" aria-hidden="true"><use href="#i-volume"/></svg>
+          <span class="sr-only">Громкость музыки</span>
+          <input id="music-volume" type="range" min="0" max="100" value="15" aria-label="Громкость музыки">
+          <output id="volume-label" for="music-volume">15%</output>
+        </label>
+      </div>
+      <details class="native-player" data-no-music>
+        <summary>Открыть плеер SoundCloud</summary>
+        <iframe id="soundcloud-player" title="SoundCloud — новый день speedup" width="100%" height="166" allow="autoplay" referrerpolicy="strict-origin-when-cross-origin"
+          data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2253374504&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;visual=false&amp;color=%23ff884d"></iframe>
+      </details>
+      <noscript><p class="no-script">Для музыки нужен JavaScript. Ссылки на этой странице работают и без него.</p></noscript>
+    </section>
 
-    <script src="script.js"></script>
+    <a href="https://on.soundcloud.com/7iRGmqFn0TAQfqLgtp" target="_blank" rel="noopener noreferrer" class="card link-card">
+      <span class="link-icon"><svg class="icon"><use href="#i-cloud"/></svg></span>
+      <span><span class="link-title">Мой SoundCloud</span><span class="link-caption">Что слушаю и сохраняю</span></span>
+      <svg class="icon arrow"><use href="#i-arrow"/></svg>
+    </a>
+    <a href="https://velmourcnikita.github.io/OmniView/" class="card link-card">
+      <span class="link-icon project-icon"><svg class="icon"><use href="#i-monitor"/></svg></span>
+      <span><span class="link-title">OmniView</span><span class="link-caption">Мой проект для компьютерного класса</span></span>
+      <svg class="icon arrow"><use href="#i-arrow"/></svg>
+    </a>
+    <footer class="page-footer"><span>velmourche</span><a href="https://github.com/velmourcnikita/velmourcnikita.github.io" target="_blank" rel="noopener noreferrer">исходный код ↗</a></footer>
+  </main>
 </body>
 </html>
